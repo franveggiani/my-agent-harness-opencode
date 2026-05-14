@@ -2,7 +2,8 @@
 
 - **Feature**: Permitir seleccionar parcelas con `nomenc21 = null` desde el mapa en el modal de Alta Pura
 - **Fecha de inicio**: 2026-05-14
-- **Estado**: `spec_en_progreso`
+- **Estado**: `completada`
+- **Fecha de finalización**: 2026-05-14
 - **Módulo afectado**: `resources/views/gestion/padron/index.blade.php` + `public/js/cartografia_js/single_click.js`
 
 ## Requerimiento

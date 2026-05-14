@@ -1,79 +1,26 @@
-# Estado del Proyecto — Guaymallén
-
-> Última actualización: 2026-05-14
-> Sistema: Catastro Municipal de Guaymallén (Laravel 5.8 / PHP 7.4)
-
----
+# Project State
 
 ## En progreso
 
-*(features actualmente en desarrollo)*
-
-| Feature | Fase | Inicio | Última actualización |
-|---------|------|--------|---------------------|
-
----
+*Ninguna tarea activa.*
 
 ## Completados
 
-*(features terminados y verificados)*
+*Sin tareas completadas.*
 
-| Feature | Fecha completado | Spec |
-|---------|-----------------|------|
+## Deuda tecnica
 
----
+*Pendiente de identificar.*
 
-## Bloqueados
+## Decisiones tomadas
 
-*(features pausados o con dependencias externas)*
-
-| Feature | Motivo | Desde |
-|---------|--------|-------|
-
----
-
-## Decisiones pendientes
-
-*(cosas que requieren input del usuario o stakeholders)*
+| Fecha | Decision | Motivo |
+|---|---|---|
+| 2026-05-14 | Arquitectura SSD con 6 agentes (orchestrator, router, architect, coder, reviewer, tester) | Simplificar desarrollo iterativo con pipelines clasificados por complejidad |
+| 2026-05-14 | Pipelines: FASTPATCH (router->coder), PATCH (router->coder->reviewer), FEATURE (router->architect->coder->reviewer->tester) | Optimizar overhead segun complejidad de la tarea |
+| 2026-05-14 | Specs solo para FEATURE en `.opencode/memory/specs/` | Evitar burocracia en tareas simples |
+| 2026-05-14 | Orchestrator sin permisos de escritura de codigo | Separacion estricta de responsabilidades |
 
 ---
 
-## Deuda técnica identificada
-
-*(issues encontrados en revisiones que no son bloqueantes pero deben atenderse)*
-
-| Issue | Origen | Severidad | Fecha |
-|-------|--------|-----------|-------|
-
----
-
-## Arquitectura — Decisiones clave
-
-Ver `.opencode/memory/decisions/` para el log detallado.
-
-| Decisión | Fecha | Archivo |
-|----------|-------|---------|
-
----
-
-## Stack técnico
-
-- **Backend**: Laravel 5.8, PHP 7.4
-- **Bases de datos**: MySQL (SGC, RUD, PAD) + PostgreSQL/PostGIS (cartografía estática/dinámica)
-- **Frontend**: Laravel Mix + Webpack, OpenLayers (cartografía)
-- **PDF**: Snappy/wkhtmltopdf, DomPDF
-- **Excel**: Maatwebsite/Laravel-Excel 3.x
-- **Testing**: PHPUnit 7.5
-
-## Conexiones a BD (crítico)
-
-| Conexión | Key | Engine | Base |
-|----------|-----|--------|------|
-| SGC (default) | `mysql` | MySQL | `catastro_guaymallen` |
-| RUD | `mysql2` | MySQL | `gestion_direcciones_gllen` |
-| PAD | `core/` PDO | MySQL | Padrones |
-| PostGIS estático | `pgsql` | PostgreSQL | Cartografía estática |
-| PostGIS dinámico | `pgsql2` | PostgreSQL | Cartografía dinámica |
-
-> **Regla**: Siempre verificar la conexión correcta antes de tocar la DB.
-> `DB::connection('mysql2')` para RUD, `DB::connection('pgsql')` para PostGIS.
+Ultima actualizacion: 2026-05-14
